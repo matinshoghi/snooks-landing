@@ -1,24 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Snooks - Premium UAE Socks Landing Page
+
+A modern, responsive landing page for Snooks, a premium sock brand based in the UAE. Built with Next.js 14, Tailwind CSS, and DaisyUI.
+
+## Features
+
+- Modern, responsive design
+- Built with Next.js 14 for optimal performance
+- Styled with Tailwind CSS and DaisyUI
+- Optimized images using WebP format
+- Interactive waitlist form
+- Smooth scroll navigation
+- Mobile-first approach
+
+## Tech Stack
+
+- Next.js 14
+- React 18
+- Tailwind CSS
+- DaisyUI
+- PostCSS
 
 ## Getting Started
 
-First, run the development server:
-
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/matinshoghi/snooks-landing.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Project Structure
+
+- `/src/app` - Next.js app router pages and components
+- `/public/images` - Optimized WebP images
+- `/src/app/components` - React components
+- `/src/app/globals.css` - Global styles and Tailwind directives
+
+## License
+
+MIT © [Snooks]
 
 ## Learn More
 

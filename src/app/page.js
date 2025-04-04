@@ -15,21 +15,22 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-base-100">
       {/* Hero Section */}
-      <section className="hero min-h-[90vh] bg-gradient-to-br from-base-200 to-base-100">
+      <section className="hero min-h-[90vh] bg-white">
         <div className="hero-content flex-col lg:flex-row-reverse gap-12 max-w-6xl mx-auto px-4 py-12">
           <div className="lg:w-1/2">
             <div className="relative">
-              <div className="absolute -top-4 -right-4 bg-primary text-primary-content px-4 py-2 rounded-full font-bold transform rotate-3">
+              <div className="absolute -top-2 right-0 bg-[#00ffd1] text-black px-4 py-2 rounded-full text-sm font-medium">
                 UAE Made
               </div>
               <Image
                 src="/images/sock-1.webp"
                 alt="Snooks Minimalist Socks"
-                width={600}
+                width={500}
                 height={400}
-                className="rounded-lg shadow-2xl"
+                className="object-contain"
+                priority
               />
-              <div className="absolute -bottom-4 -left-4 bg-accent text-accent-content px-4 py-2 rounded-full font-bold transform -rotate-3">
+              <div className="absolute -bottom-2 left-0 bg-[#00ffd1] text-black px-4 py-2 rounded-full text-sm font-medium">
                 6-Month Guarantee
               </div>
             </div>
@@ -39,39 +40,39 @@ export default function Home() {
               <span className="text-primary">Snooks</span>: Simple Socks, 
               <span className="block mt-2">Sustainably Made in the UAE</span>
             </h1>
-            <p className="py-6 text-lg">
+            <p className="py-6 text-lg text-gray-600">
               Experience the perfect blend of comfort and sustainability with our premium organic cotton socks. 
               Designed for those who appreciate quality, simplicity, and conscious living.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button 
                 onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
-                className="btn btn-primary btn-lg"
+                className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full font-medium"
               >
                 Join the Waitlist
               </button>
               <button 
                 onClick={handleLearnMore}
-                className="btn btn-outline btn-lg"
+                className="bg-gray-100 hover:bg-gray-200 text-gray-800 px-8 py-3 rounded-full font-medium"
               >
                 Learn More
               </button>
             </div>
-            <div className="stats shadow mt-8">
-              <div className="stat">
-                <div className="stat-title">6-Month</div>
-                <div className="stat-value text-primary">Hole-Free</div>
-                <div className="stat-desc">Guarantee</div>
+            <div className="grid grid-cols-3 gap-6 mt-12">
+              <div>
+                <div className="text-sm text-gray-500">6-Month</div>
+                <div className="text-xl font-bold text-primary mt-1">Hole-Free</div>
+                <div className="text-sm text-gray-500">Guarantee</div>
               </div>
-              <div className="stat">
-                <div className="stat-title">100%</div>
-                <div className="stat-value text-primary">Organic</div>
-                <div className="stat-desc">Cotton</div>
+              <div>
+                <div className="text-sm text-gray-500">100%</div>
+                <div className="text-xl font-bold text-primary mt-1">Organic</div>
+                <div className="text-sm text-gray-500">Cotton</div>
               </div>
-              <div className="stat">
-                <div className="stat-title">3 Pairs</div>
-                <div className="stat-value text-primary">Monthly</div>
-                <div className="stat-desc">Subscription</div>
+              <div>
+                <div className="text-sm text-gray-500">3 Pairs</div>
+                <div className="text-xl font-bold text-primary mt-1">Monthly</div>
+                <div className="text-sm text-gray-500">Subscription</div>
               </div>
             </div>
           </div>
@@ -249,49 +250,64 @@ export default function Home() {
       </section>
 
       {/* Subscription Section */}
-      <section className="py-16 bg-base-200">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="card bg-primary text-primary-content shadow-xl">
-            <div className="card-body">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div>
-                  <h2 className="card-title text-3xl mb-4">The Snooks Subscription</h2>
-                  <p className="text-lg mb-6">Never run out of comfortable socks again!</p>
-                  <ul className="space-y-3">
-                    <li className="flex items-center gap-2">
-                      <span className="text-2xl">✓</span>
-                      <span>3 new pairs every month</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-2xl">✓</span>
-                      <span>Flexible subscription management</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-2xl">✓</span>
-                      <span>Free shipping on all subscription orders</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-2xl">✓</span>
-                      <span>Cancel or pause anytime</span>
-                    </li>
-                  </ul>
-                  <div className="card-actions mt-6">
-                    <button className="btn btn-accent btn-lg">Learn More</button>
-                  </div>
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4 relative">
+          <div className="absolute top-8 right-8">
+            <div className="bg-[#00ffd1] text-black px-6 py-2 rounded-full font-medium">
+              Save 20%
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                The Snooks Subscription
+              </h2>
+              <p className="text-2xl text-gray-500 mb-12">
+                Never run out of comfortable socks again!
+              </p>
+              
+              <div className="grid grid-cols-2 gap-8 mb-12">
+                <div className="space-y-2">
+                  <div className="text-3xl">🎁</div>
+                  <h3 className="font-medium text-xl">Monthly Delivery</h3>
+                  <p className="text-gray-500">3 pairs delivered to your door</p>
                 </div>
-                <div className="relative">
-                  <Image
-                    src="/images/sock-6.webp"
-                    alt="Subscription Box"
-                    width={400}
-                    height={400}
-                    className="rounded-lg shadow-2xl"
-                  />
-                  <div className="absolute -top-4 -right-4 bg-accent text-accent-content px-4 py-2 rounded-full font-bold">
-                    Save 20%
-                  </div>
+                <div className="space-y-2">
+                  <div className="text-3xl">⚡️</div>
+                  <h3 className="font-medium text-xl">Flexible Plans</h3>
+                  <p className="text-gray-500">Pause or cancel anytime</p>
+                </div>
+                <div className="space-y-2">
+                  <div className="text-3xl">🚚</div>
+                  <h3 className="font-medium text-xl">Free Shipping</h3>
+                  <p className="text-gray-500">On all subscription orders</p>
+                </div>
+                <div className="space-y-2">
+                  <div className="text-3xl">💎</div>
+                  <h3 className="font-medium text-xl">Premium Quality</h3>
+                  <p className="text-gray-500">100% organic cotton</p>
                 </div>
               </div>
+
+              <button 
+                onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-[#00ffd1] hover:bg-[#00e6bc] text-black px-8 py-3 rounded-full font-medium inline-flex items-center gap-2 transition-all"
+              >
+                Join the Waitlist
+                <span className="text-xl">→</span>
+              </button>
+            </div>
+
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#00ffd1]/20 via-transparent to-primary/20 rounded-3xl"></div>
+              <Image
+                src="/images/sock-6.webp"
+                alt="Subscription Box"
+                width={600}
+                height={400}
+                className="relative z-10"
+              />
             </div>
           </div>
         </div>
@@ -415,33 +431,19 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="footer p-10 bg-base-200 text-base-content">
-        <div>
-          <span className="footer-title">Company</span> 
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Sustainability</a>
-          <a className="link link-hover">Careers</a>
-        </div> 
-        <div>
-          <span className="footer-title">Product</span> 
-          <a className="link link-hover">No-Show Socks</a>
-          <a className="link link-hover">Ankle Socks</a>
-          <a className="link link-hover">Quarter Socks</a>
-          <a className="link link-hover">Subscription</a>
-        </div> 
-        <div>
-          <span className="footer-title">Legal</span> 
-          <a className="link link-hover">Terms of use</a>
-          <a className="link link-hover">Privacy policy</a>
-          <a className="link link-hover">Return Policy</a>
-          <a className="link link-hover">Shipping Policy</a>
-        </div>
-        <div>
-          <span className="footer-title">Newsletter</span> 
-          <div className="form-control w-80">
-            <div className="relative">
-              <input type="text" placeholder="username@site.com" className="input input-bordered w-full pr-16" /> 
-              <button className="btn btn-primary absolute top-0 right-0 rounded-l-none">Subscribe</button>
+        <div className="max-w-6xl mx-auto w-full">
+          <div className="flex justify-center gap-8 mb-8">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">🚚</span>
+              <span>Free Shipping</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">🔄</span>
+              <span>Easy Returns</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">💳</span>
+              <span>Secure Payment</span>
             </div>
           </div>
         </div>
