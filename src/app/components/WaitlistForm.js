@@ -13,6 +13,7 @@ export default function WaitlistForm() {
     setStatus({ type: '', message: '' });
 
     try {
+      console.log('Submitting email:', email);
       const response = await fetch('/api/waitlist', {
         method: 'POST',
         headers: {
@@ -22,6 +23,7 @@ export default function WaitlistForm() {
       });
 
       const data = await response.json();
+      console.log('Response:', data);
 
       if (!response.ok) {
         throw new Error(data.error || 'Something went wrong');
@@ -33,6 +35,7 @@ export default function WaitlistForm() {
       });
       setEmail('');
     } catch (error) {
+      console.error('Submission error:', error);
       setStatus({
         type: 'error',
         message: error.message || 'Failed to join waitlist. Please try again.',
